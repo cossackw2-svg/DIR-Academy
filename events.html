@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ініціатива DIR Academy Ukraine для українсько-європейського діалогу про безпеку, дослідження та історичну спадщину.">
+  <title>DIR Academy Ukraine — Події та ініціативи</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="events.css">
+</head>
+<body data-page="events">
+  <header>
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html"><b>DIR</b> Academy Ukraine</a>
+      <nav aria-label="Головна навігація">
+        <a href="index.html">Головна</a>
+        <a href="about.html">Про академію</a>
+        <a href="sport.html">Спорт</a>
+        <a href="events.html" class="active" aria-current="page">Події</a>
+        <a href="news.html">Новини</a>
+        <a href="orgs.html">Для організацій</a>
+        <a href="join.html">Приєднатися</a>
+      </nav>
+      <a class="btn btn-small" href="#registration">Залишити заявку</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="initiative-hero">
+      <div class="wrap initiative-hero-inner">
+        <p class="initiative-kicker">Події та ініціативи · міжнародний діалог</p>
+        <h1>Спадщина та безпека: українсько-європейський діалог</h1>
+        <p class="initiative-intro">Ініціатива DIR Academy Ukraine та партнерів для аналізу безпекових викликів і розвитку співпраці — від стійкості критичної інфраструктури до цифрової експертизи історичних джерел.</p>
+        <a class="btn initiative-cta" href="#registration">Висловити інтерес</a>
+      </div>
+    </section>
+
+    <div class="wrap initiative-layout">
+      <article class="initiative-content">
+        <section>
+          <p class="initiative-label">Мета та контекст</p>
+          <h2>Про ініціативу</h2>
+          <p>На тлі геополітичних змін європейські держави переглядають підходи до стійкості та стратегічної автономії. Безпека охоплює не лише оборону, а й енергетику, економіку, цифрове середовище та морські простори.</p>
+          <p>Ініціатива DIR Academy Ukraine покликана створити професійний майданчик для міждисциплінарного обговорення цих питань і підготовки практичних рекомендацій. Ми поєднуємо роботу з архівами та історичними документами з сучасними методами дослідження й аналізу.</p>
+        </section>
+
+        <section>
+          <p class="initiative-label">Пріоритети</p>
+          <h2>Ключові напрямки</h2>
+          <div class="initiative-topics">
+            <article><span>01</span><div><h3>Цифрова стійкість</h3><p>Кібербезпека та захист критичної інфраструктури на рівні досліджень і політики.</p></div></article>
+            <article><span>02</span><div><h3>Морський простір</h3><p>Безпека морських просторів і цивільної інфраструктури.</p></div></article>
+            <article><span>03</span><div><h3>Космос і зв’язок</h3><p>Супутникові технології, зв’язок і міжнародне наукове партнерство.</p></div></article>
+            <article><span>04</span><div><h3>Технології та промисловість</h3><p>Оборонні інновації, відповідальні ланцюги постачання та співпраця.</p></div></article>
+            <article><span>05</span><div><h3>Історія та цифрова експертиза</h3><p>Історична реконструкція й дослідження архівних матеріалів цифровими методами.</p></div></article>
+          </div>
+        </section>
+
+        <section class="initiative-format">
+          <p class="initiative-label">Як долучитися</p>
+          <h2>Формат участі</h2>
+          <p>Ініціатива передбачає тематичні круглі столи, спільні дослідження та професійні обміни в Україні й Європі. Формат і календар наступних зустрічей визначатимуться окремо; залишена заявка допоможе нам зрозуміти ваші тематичні інтереси.</p>
+        </section>
+      </article>
+
+      <aside class="initiative-form-card" id="registration">
+        <p class="initiative-label">Заявка на участь</p>
+        <h2>Долучитися до діалогу</h2>
+        <p class="form-intro">Розкажіть про себе та оберіть тему, яка вас цікавить. Ми зв’яжемося з вами щодо наступних заходів.</p>
+        <form id="initiative-form" novalidate>
+          <div class="fields">
+            <div class="full"><label for="participant-name">Ім’я та прізвище <span aria-hidden="true">*</span></label><input id="participant-name" name="name" autocomplete="name" required></div>
+            <div class="full"><label for="participant-email">Електронна пошта <span aria-hidden="true">*</span></label><input id="participant-email" name="email" type="email" autocomplete="email" required></div>
+            <div><label for="participant-phone">Телефон</label><input id="participant-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div><label for="participant-org">Організація / установа</label><input id="participant-org" name="organization" autocomplete="organization"></div>
+            <div><label for="participant-role">Посада</label><input id="participant-role" name="role" autocomplete="organization-title"></div>
+            <div><label for="participant-topic">Напрямок інтересу <span aria-hidden="true">*</span></label><select id="participant-topic" name="topic" required><option value="">Оберіть…</option><option>Кібербезпека та стійкість</option><option>Морська безпека</option><option>Космічні технології</option><option>Оборонні інновації</option><option>Історична реконструкція</option><option>Інше</option></select></div>
+            <div><label for="participant-format">Бажаний формат</label><select id="participant-format" name="format"><option>Онлайн</option><option>Офлайн — за запрошенням</option><option>Будь-який</option></select></div>
+            <div class="full"><label for="participant-message">Коментар або запитання</label><textarea id="participant-message" name="message" rows="3"></textarea></div>
+            <div class="full consent-row"><input id="participant-consent" name="consent" type="checkbox" required><label for="participant-consent">Погоджуюсь на обробку персональних даних для зв’язку щодо ініціативи. <span aria-hidden="true">*</span></label></div>
+            <div class="full"><button class="btn" type="submit">Надіслати заявку</button><p class="demo-note">Демонстраційна форма: дані не передаються і не зберігаються на сервері.</p><p id="initiative-status" class="initiative-status" role="status" aria-live="polite"></p></div>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div><strong>DIR Academy Ukraine</strong><br>Громадська організація · зареєстрована 2016 року</div><div>+380 00 000 00 00<br>info@example.ua<br>Пн–Пт 09:00–17:00</div><div>© 2026 DIR Academy Ukraine</div></div></footer>
+
+  <script>
+    document.getElementById('initiative-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const status = document.getElementById('initiative-status');
+      const name = document.getElementById('participant-name').value.trim();
+      const email = document.getElementById('participant-email').value.trim();
+      const topic = document.getElementById('participant-topic').value;
+      const consent = document.getElementById('participant-consent').checked;
+      const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      status.className = 'initiative-status is-visible';
+      if (!name || !emailIsValid || !topic || !consent) {
+        status.classList.add('is-error');
+        status.textContent = 'Перевірте ім’я, коректність електронної пошти, напрямок і згоду.';
+        return;
+      }
+
+      status.classList.remove('is-error');
+      status.textContent = `Дякуємо, ${name}! Інтерес до напряму «${topic}» зафіксовано лише для демонстрації — форма ще не підключена до сервера.`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>

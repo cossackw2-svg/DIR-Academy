@@ -1,0 +1,71 @@
+/* Initiative/events page additions; the main visual system is in styles.css. */
+.initiative-hero {
+  padding: clamp(58px, 8vw, 100px) 0;
+  color: var(--white);
+  background: linear-gradient(118deg, #19372b 0%, #244b3a 68%, #315c48 100%);
+  border-bottom: 3px solid var(--gold);
+}
+.initiative-hero-inner { position: relative; }
+.initiative-kicker, .initiative-label {
+  margin: 0 0 12px;
+  color: #d7c18d;
+  font-size: .71rem;
+  font-weight: 750;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.initiative-hero h1 {
+  max-width: 850px;
+  margin: 0 0 18px;
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+.initiative-intro { max-width: 760px; margin: 0 0 26px; color: rgba(255,254,250,.84); font-size: clamp(1rem, 1.6vw, 1.16rem); }
+.initiative-cta { background: var(--gold); border-color: var(--gold); color: var(--forest-dark); }
+.initiative-cta:hover { background: #c9ad6c; color: var(--forest-dark); }
+.initiative-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+  align-items: start;
+  gap: clamp(36px, 6vw, 78px);
+  padding-top: 56px;
+  padding-bottom: 64px;
+}
+.initiative-content section + section { margin-top: 48px; }
+.initiative-content .initiative-label, .initiative-form-card .initiative-label { color: var(--forest); }
+.initiative-content h2, .initiative-form-card h2 { margin: 0 0 16px; font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.2; }
+.initiative-content p { max-width: 760px; }
+.initiative-topics { margin-top: 22px; border-top: 1px solid var(--line); }
+.initiative-topics article { display: grid; grid-template-columns: 48px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.initiative-topics article > span { color: var(--gold); font-family: var(--serif); font-size: 1.35rem; }
+.initiative-topics h3 { margin: 0 0 4px; font-family: var(--serif); font-size: 1.18rem; }
+.initiative-topics p { margin: 0; font-size: .92rem; }
+.initiative-format { padding-top: 26px; border-top: 1px solid var(--line); }
+.initiative-form-card { padding: clamp(22px, 3vw, 34px); border: 1px solid var(--line); border-top: 3px solid var(--gold); background: var(--white); box-shadow: var(--shadow); }
+.initiative-form-card h2 { font-size: 1.8rem; }
+.form-intro { margin: 0 0 22px; font-size: .92rem; }
+.initiative-form-card .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.initiative-form-card .full { grid-column: 1 / -1; }
+.initiative-form-card label { font-size: .82rem; }
+.initiative-form-card input, .initiative-form-card select { min-height: 43px; }
+.initiative-form-card textarea { min-height: 90px; }
+.consent-row { display: flex; align-items: flex-start; gap: 9px; }
+.consent-row input { flex: 0 0 auto; width: auto; min-height: 0; margin: 5px 0 0; }
+.consent-row label { margin: 0; color: var(--muted); font-weight: 400; line-height: 1.5; }
+.initiative-form-card button { width: 100%; }
+.demo-note { margin: 10px 0 0; font-size: .74rem; line-height: 1.5; }
+.initiative-status { display: none; margin: 12px 0 0; padding: 11px 12px; border-left: 3px solid var(--forest); background: #eaf0e9; color: var(--ink); font-size: .84rem; }
+.initiative-status.is-visible { display: block; }
+.initiative-status.is-error { border-color: #9c3e32; background: #f7e9e6; }
+@media (max-width: 860px) {
+  .initiative-layout { grid-template-columns: 1fr; }
+  .initiative-form-card { max-width: 680px; }
+}
+@media (max-width: 600px) {
+  .initiative-layout { padding-top: 38px; padding-bottom: 44px; }
+  .initiative-form-card .fields { grid-template-columns: 1fr; }
+  .initiative-form-card .full { grid-column: auto; }
+}

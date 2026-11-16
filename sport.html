@@ -4,208 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DIR Academy Ukraine — Спорт</title>
+<link rel="stylesheet" href="styles.css">
 <style>
-  :root {
-    --bg: #f7f5ef; --card: #fff; --text: #1b2a22; --muted: #5d6a62;
-    --accent: #1f5c3f; --gold: #c8a23a; --line: #e1ddd0;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; font-family: system-ui, -apple-system, sans-serif;
-    background: var(--bg); color: var(--text);
-  }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-
-  /* Шапка (та сама, що на інших сторінках) */
-  header {
-    background: var(--card); border-bottom: 3px solid var(--gold);
-    padding: 16px 0; margin-bottom: 30px;
-  }
+  /* Legacy sport-page structure; colors and typography inherit from the shared site stylesheet. */
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header { margin-bottom: 0; padding: 0; }
   header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .logo { font-weight: 800; font-size: 1.2rem; }
-  .logo b { color: var(--accent); }
-  nav { display: flex; gap: 18px; flex-wrap: wrap; }
-  nav a { text-decoration: none; color: var(--text); font-weight: 500; }
-  nav a:hover { color: var(--accent); }
-  nav a.active { color: var(--accent); border-bottom: 2px solid var(--gold); }
-
-  h1 { font-size: 28px; margin: 0 0 10px; color: var(--accent); }
-  h2 { font-size: 20px; margin: 30px 0 12px; color: var(--accent); }
-  p { font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
-
-  /* Сітка карток */
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin: 20px 0; }
-  .card {
-    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 20px; display: flex; flex-direction: column; gap: 8px;
-  }
-  .card small {
-    color: var(--accent); font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.06em; font-size: 0.72rem;
-  }
-  .card h3 { margin: 0; font-size: 1.1rem; }
-  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; flex: 1; }
-
-  /* Таблиці */
-  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
-  th, td { border: 1px solid var(--line); padding: 10px; text-align: left; }
-  th { background: rgba(31,92,63,0.1); font-weight: 600; }
-
-  /* Форма */
-  .form {
-    background: var(--card); border: 1px solid var(--line);
-    border-top: 4px solid var(--gold); border-radius: 12px;
-    padding: 28px; margin: 30px 0;
-  }
-  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .full { grid-column: 1 / -1; }
-  label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
-  input, select, textarea {
-    width: 100%; padding: 11px 12px; border: 1px solid var(--line);
-    border-radius: 8px; background: var(--bg); color: var(--text);
-    font: inherit;
-  }
-  .chk { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); font-size: 0.88rem; }
-  .chk input { width: auto; margin-top: 5px; }
-  #ok { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 8px; }
-  .btn {
-    background: var(--accent); color: #fff; border: 0; border-radius: 8px;
-    padding: 12px 24px; font: inherit; font-weight: 700; cursor: pointer;
-  }
-  .btn:hover { filter: brightness(1.1); }
-
-  /* Футер */
-  footer {
-    background: var(--card); border-top: 1px solid var(--line);
-    padding: 26px 0; color: var(--muted); font-size: 0.9rem; margin-top: 40px;
-  }
-  footer .wrap { display: flex; gap: 24px; justify-content: space-between; flex-wrap: wrap; }
-
-  @media (max-width: 600px) { .fields { grid-template-columns: 1fr; } }
+  .sport-content { padding-top: 40px; padding-bottom: 56px; }
+  .sport-content h1, .sport-content h2 { color: var(--forest-dark); font-family: var(--serif); font-weight: 500; }
+  .sport-content h1 { font-size: clamp(2.2rem, 4vw, 3.25rem); }
+  .sport-content h2 { font-size: clamp(1.55rem, 2.5vw, 2rem); }
+  .sport-content p { font-size: 1rem; line-height: 1.7; }
+  .sport-content .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 20px; margin: 22px 0 32px; }
+  .sport-content .card { background: var(--white); border: 1px solid var(--line); border-top: 2px solid var(--gold); border-radius: 0; padding: 26px; box-shadow: var(--shadow); }
+  .sport-content .card h3 { font-family: var(--serif); font-size: 1.25rem; }
+  .sport-content table { width: 100%; border-collapse: collapse; margin: 18px 0 28px; background: var(--white); }
+  .sport-content th, .sport-content td { border: 1px solid var(--line); padding: 13px 15px; text-align: left; }
+  .sport-content th { background: #eae8df; color: var(--forest-dark); }
+  .sport-content .form { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 0; padding: clamp(22px, 4vw, 36px); margin: 34px 0; box-shadow: var(--shadow); }
+  .sport-content .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .sport-content .full { grid-column: 1 / -1; }
+  .sport-content label { display: block; font-size: .88rem; font-weight: 650; margin-bottom: 6px; }
+  .sport-content input, .sport-content select, .sport-content textarea { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #d5d2c8; border-radius: 2px; background: #fff; color: var(--ink); font: inherit; }
+  .sport-content .chk { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); font-size: .88rem; }
+  .sport-content .chk input { width: auto; min-height: 0; margin-top: 5px; }
+  .sport-content #ok { display: none; margin-top: 14px; padding: 12px 14px; }
+  .sport-content footer { background: #eeece4; border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); margin-top: 34px; }
+  .sport-content footer .wrap { display: flex; gap: 24px; justify-content: space-between; flex-wrap: wrap; }
+  @media (max-width: 600px) { .sport-content .fields { grid-template-columns: 1fr; } .sport-content .full { grid-column: auto; } }
 </style>
 </head>
-<body>
-
-<header>
-  <div class="wrap">
-    <div class="logo"><b>DIR</b> Academy Ukraine</div>
-    <nav>
-      <a href="index.html">Головна</a>
-      <a href="about.html">Про академію</a>
-      <a class="active" href="sport.html">Спорт</a>
-      <a href="news.html">Новини</a>
-      <a href="orgs.html">Для організацій</a>
-      <a href="join.html">Приєднатися</a>
-    </nav>
-  </div>
-</header>
-
-<div class="wrap">
+<body data-page="sport">
+<header><div class="wrap header-inner">
+  <div class="logo"><b>DIR</b> Academy Ukraine</div>
+  <nav aria-label="Головна навігація">
+    <a href="index.html">Головна</a><a href="about.html">Про академію</a><a class="active" href="sport.html">Спорт</a><a href="events.html">Події</a><a href="news.html">Новини</a><a href="orgs.html">Для організацій</a><a href="join.html">Приєднатися</a>
+  </nav>
+</div></header>
+<main class="wrap sport-content">
   <h1>Спортивні програми DIR Academy Ukraine</h1>
   <p>За зразком <b>UWA Social Sports</b>, ми пропонуємо соціальні спортивні змагання, оздоровчі програми та реабілітаційні заняття для всіх охочих. Наша мета — поєднати історичну спадщину сокільського руху з сучасними методиками.</p>
 
-  <!-- Сезони -->
   <h2>Літній сезон 2026</h2>
-  <table>
-    <tr><th>Параметр</th><th>Деталі</th></tr>
-    <tr><td>Реєстрація відкрита</td><td>7 вересня 2026</td></tr>
-    <tr><td>Реєстрація закрита</td><td>4 листопада 2026</td></tr>
-    <tr><td>Початок сезону</td><td>9 листопада 2026</td></tr>
-    <tr><td>Кінець сезону</td><td>19 лютого 2027</td></tr>
-    <tr><td>Вартість</td><td>984 грн за команду (82 грн/тиждень)</td></tr>
-  </table>
+  <table><thead><tr><th>Параметр</th><th>Деталі</th></tr></thead><tbody>
+    <tr><td>Реєстрація відкрита</td><td>7 вересня 2026</td></tr><tr><td>Реєстрація закрита</td><td>4 листопада 2026</td></tr><tr><td>Початок сезону</td><td>9 листопада 2026</td></tr><tr><td>Кінець сезону</td><td>19 лютого 2027</td></tr><tr><td>Вартість</td><td>984 грн за команду (82 грн/тиждень)</td></tr>
+  </tbody></table>
 
-  <!-- Види спорту -->
   <h2>Напрямки</h2>
   <div class="grid">
-    <div class="card">
-      <small>Гімнастика</small>
-      <h3>Функціональна гімнастика</h3>
-      <p>Заняття для всіх вікових груп. Розвиток гнучкості, сили та координації за історичними методиками.</p>
-    </div>
-    <div class="card">
-      <small>Йога</small>
-      <h3>Хатха та Віньяса</h3>
-      <p>Практики для зняття стресу, покращення дихання та відновлення після навантажень.</p>
-    </div>
-    <div class="card">
-      <small>Реабілітація</small>
-      <h3>Фізіотерапевтичні програми</h3>
-      <p>Індивідуальні та групові заняття для відновлення після травм та операцій.</p>
-    </div>
-    <div class="card">
-      <small>Аква-програми</small>
-      <h3>Аква-фітнес та плавання</h3>
-      <p>Гідротерапія, аква-аеробіка та навчання плаванню для дітей і дорослих.</p>
-    </div>
-    <div class="card">
-      <small>Теніс</small>
-      <h3>Настільний теніс</h3>
-      <p>Соціальні турніри та тренування для початківців і досвідчених гравців.</p>
-    </div>
+    <article class="card"><small>Гімнастика</small><h3>Функціональна гімнастика</h3><p>Заняття для всіх вікових груп. Розвиток гнучкості, сили та координації за історичними методиками.</p></article>
+    <article class="card"><small>Йога</small><h3>Хатха та Віньяса</h3><p>Практики для зняття стресу, покращення дихання та відновлення після навантажень.</p></article>
+    <article class="card"><small>Реабілітація</small><h3>Фізіотерапевтичні програми</h3><p>Індивідуальні та групові заняття для відновлення після травм та операцій.</p></article>
+    <article class="card"><small>Аква-програми</small><h3>Аква-фітнес та плавання</h3><p>Гідротерапія, аква-аеробіка та навчання плаванню для дітей і дорослих.</p></article>
+    <article class="card"><small>Теніс</small><h3>Настільний теніс</h3><p>Соціальні турніри та тренування для початківців і досвідчених гравців.</p></article>
   </div>
 
-  <!-- Правила -->
   <h2>Правила участі</h2>
-  <ul>
-    <li><b>Дух гри:</b> соціальне, безпечне та інклюзивне середовище. Неприйнятна поведінка не допускається.</li>
-    <li><b>Неявка:</b> повідомляти до 13:00 дня гри. Неявка зараховується як поразка.</li>
-    <li><b>Розподіл:</b> команди розподіляються за дивізіонами за результатами градації.</li>
-    <li><b>Фінали:</b> останні два тижні сезону. Для участі гравець має зіграти мінімум 3 гри.</li>
-  </ul>
+  <ul><li><b>Дух гри:</b> соціальне, безпечне та інклюзивне середовище. Неприйнятна поведінка не допускається.</li><li><b>Неявка:</b> повідомляти до 13:00 дня гри. Неявка зараховується як поразка.</li><li><b>Розподіл:</b> команди розподіляються за дивізіонами за результатами градації.</li><li><b>Фінали:</b> останні два тижні сезону. Для участі гравець має зіграти мінімум 3 гри.</li></ul>
 
-  <!-- Форма реєстрації -->
-  <div class="form">
+  <section class="form">
     <h2>Реєстрація на спортивну програму</h2>
-    <form onsubmit="return false" novalidate>
-      <div class="fields">
-        <div><label for="name">Ім'я та прізвище *</label><input id="name" required></div>
-        <div><label for="email">Електронна пошта *</label><input id="email" type="email" required></div>
-        <div><label for="phone">Телефон</label><input id="phone" type="tel"></div>
-        <div><label for="sport">Напрямок *</label><select id="sport" required>
-          <option value="">Оберіть…</option>
-          <option>Гімнастика</option>
-          <option>Йога</option>
-          <option>Реабілітація</option>
-          <option>Аква-програми</option>
-          <option>Настільний теніс</option>
-        </select></div>
-        <div><label for="level">Рівень підготовки</label><select id="level">
-          <option>Початківець</option>
-          <option>Середній</option>
-          <option>Досвідчений</option>
-        </select></div>
-        <div><label for="team">Назва команди (якщо є)</label><input id="team"></div>
-        <div class="full"><label for="msg">Додаткова інформація</label><textarea id="msg" rows="3"></textarea></div>
-        <div class="full chk"><input id="agree" type="checkbox" required><label for="agree" style="font-weight:400;margin:0">Погоджуюсь на обробку персональних даних.</label></div>
-        <div class="full"><button class="btn" id="go" type="button">Зареєструватися</button><div id="ok" role="status"></div></div>
-      </div>
-    </form>
-  </div>
-</div>
-
-<footer>
-  <div class="wrap">
-    <div><strong>DIR Academy Ukraine</strong><br>Громадська організація · зареєстрована 2016 року</div>
-    <div>+380 00 000 00 00<br>info@example.ua<br>Пн–Пт 09:00–17:00</div>
-    <div>© 2026 DIR Academy Ukraine</div>
-  </div>
-</footer>
-
+    <form id="sport-form" novalidate><div class="fields">
+      <div><label for="name">Ім'я та прізвище *</label><input id="name" required></div>
+      <div><label for="email">Електронна пошта *</label><input id="email" type="email" required></div>
+      <div><label for="phone">Телефон</label><input id="phone" type="tel"></div>
+      <div><label for="sport">Напрямок *</label><select id="sport" required><option value="">Оберіть…</option><option>Гімнастика</option><option>Йога</option><option>Реабілітація</option><option>Аква-програми</option><option>Настільний теніс</option></select></div>
+      <div><label for="level">Рівень підготовки</label><select id="level"><option>Початківець</option><option>Середній</option><option>Досвідчений</option></select></div>
+      <div><label for="team">Назва команди (якщо є)</label><input id="team"></div>
+      <div class="full"><label for="msg">Додаткова інформація</label><textarea id="msg" rows="3"></textarea></div>
+      <div class="full chk"><input id="agree" type="checkbox" required><label for="agree" style="font-weight:400;margin:0">Погоджуюсь на обробку персональних даних.</label></div>
+      <div class="full"><button class="btn" type="submit">Зареєструватися</button><div id="ok" role="status"></div></div>
+    </div></form>
+  </section>
+</main>
+<footer><div class="wrap"><div><strong>DIR Academy Ukraine</strong><br>Громадська організація · зареєстрована 2016 року</div><div>+380 00 000 00 00<br>info@example.ua<br>Пн–Пт 09:00–17:00</div><div>© 2026 DIR Academy Ukraine</div></div></footer>
 <script>
-  document.getElementById('go').addEventListener('click', function() {
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var sport = document.getElementById('sport').value;
-    var ok = document.getElementById('ok');
+  document.getElementById('sport-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const sport = document.getElementById('sport').value;
+    const ok = document.getElementById('ok');
     ok.style.display = 'block';
-    if (!name || !email || !sport || !document.getElementById('agree').checked) {
-      ok.style.background = 'rgba(210,50,50,.15)';
-      ok.textContent = 'Заповніть обов’язкові поля та підтвердіть згоду.';
+    if (!name || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) || !sport || !document.getElementById('agree').checked) {
+      ok.style.background = '#f7e9e6';
+      ok.textContent = 'Заповніть обов’язкові поля коректно та підтвердіть згоду.';
       return;
     }
-    ok.style.background = 'rgba(30,160,90,.15)';
-    ok.textContent = 'Дякуємо, ' + name + '! Ви зареєстровані на програму «' + sport + '».';
+    ok.style.background = '#eaf0e9';
+    ok.textContent = `Дякуємо, ${name}! Це демонстраційне підтвердження; форма не надсилає дані на сервер.`;
+    form.reset();
   });
 </script>
 </body>
